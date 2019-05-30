@@ -1,0 +1,77 @@
+<html>
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <center>
+    <div class="container">
+      <div class="row">
+        <img src="logo.png" alt="recovery" width="400" height="200">
+        <h1>Newsletter Sign-Up</h1>
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="name" type="text" class="validate">
+              <label for="icon_prefix">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="name" type="text" class="validate">
+              <label for="icon_prefix">Last Name</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">email</i>
+              <input id="email" type="email" class="validate">
+              <label for="icon_email">Email</label>
+              <span class="helper-text" data-error="Invalid"></span>
+            </div>
+          </div>
+          <button class="btn waves-effect waves-light" type="button" id="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </center>
+  <!--JavaScript at end of body for optimized loading-->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    $("#submit").click(function() {
+
+      var name = $("#name").val();
+      var email = $("#email").val();
+
+      if (name == '' || email == '') {
+
+        swal({
+          title: "Fields Empty!",
+          text: "Check missing fields",
+          icon: "warning",
+          button: "Ok",
+        });
+
+      } else {
+
+        swal({
+          title: "Successfully submitted!",
+          icon: "success",
+          button: "Ok",
+        });
+      }
+
+
+    });
+  </script>
+</body>
+
+</html>
